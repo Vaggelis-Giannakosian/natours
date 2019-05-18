@@ -20,7 +20,6 @@ html {
 body{
     font-family: "Lato", sans-serif;
     font-weight: 400;
-    /*font-size: 16px;*/
     line-height: 1.7;
     color: #777;
     padding: 3rem;
@@ -40,17 +39,17 @@ body{
     clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100% );
 }
 
-.logo-box{
+.header__logo-box{
     position: absolute;
     top:4rem;
     left: 4rem;
 }
 
-.logo{
+.header__logo{
 height: 3.5rem;
 }
 
-.text-box{
+.header__text-box{
     position: absolute;
     top:40%;
     left:50%;
@@ -65,7 +64,7 @@ height: 3.5rem;
     margin-bottom: 6rem;
 }
 
-.heading-primary-main{
+.heading-primary--main{
     font-size: 6rem;
     font-weight: 400;
     letter-spacing: 3.5rem;
@@ -75,7 +74,7 @@ height: 3.5rem;
     display: block;
 }
 
-.heading-primary-sub{
+.heading-primary--sub{
     font-size: 2rem;
     font-weight: 700;
     letter-spacing: 1.75rem;
@@ -143,7 +142,7 @@ height: 3.5rem;
     box-shadow: 0 .5rem 1rem rgba( 0,0,0,.2);
 }
 
-.btn-white{
+.btn--white{
     background-color: #fff;
     color: #777;
 }
@@ -161,7 +160,7 @@ height: 3.5rem;
     transition: all .4s;
 }
 
-.btn-white::after{
+.btn--white::after{
     background-color: #fff;
 }
 
@@ -170,7 +169,7 @@ height: 3.5rem;
     opacity: 0;
 }
 
-.btn-animated{
+.btn--animated{
     animation: moveToTop 1s ease-out .75s;
     animation-fill-mode: backwards;
 }
