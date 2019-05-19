@@ -1,0 +1,63 @@
+@import "../abstracts/variables";
+@import "../abstracts/mixins";
+
+
+%button_placeholder {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1.5rem 4rem ;
+  border-radius: 10rem;
+  display: inline-block;
+  transition: all .1s;
+  position: relative;
+  font-size: 1.6rem;
+}
+
+.btn{
+  &:link{
+    @extend %button_placeholder;
+  }
+  &:visited{
+    @extend %button_placeholder;
+  }
+  &:hover{
+    @include btn_animation_on_hover_and_active(-.3,1,2);
+
+    &::after{
+      transform:scaleX(1.4) scaleY(1.6);
+      opacity: 0;
+    }
+
+  }
+  &:active{
+    @include  btn_animation_on_hover_and_active(-.1,.5,1);
+  }
+
+  &::after{
+    content: '';
+    display: inline-block;
+    height: 100%;
+    width:100%;
+    border-radius: 10rem;
+    position:absolute;
+    top:0;
+    left:0;
+    z-index: -1;
+    transition: all .4s;
+  }
+
+  &--white{
+    background-color: $color-white;
+    color: $color-grey-dark;
+
+    &::after{
+      background-color: $color-white;
+    }
+  }
+
+
+  &--animated{
+    animation: moveToTop 1s ease-out .75s;
+    animation-fill-mode: backwards;
+  }
+}

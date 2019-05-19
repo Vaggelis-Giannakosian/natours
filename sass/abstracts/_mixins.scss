@@ -1,0 +1,4 @@
+@mixin btn_animation_on_hover_and_active($offset,$shadowWidth,$shadowBlur) {
+  transform:translateY($offset*1rem);
+  box-shadow: 0 $shadowWidth rem $shadowBlur rem rgba( $color-black,.2);
+}
