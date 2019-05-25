@@ -11,9 +11,18 @@
   transition: all .1s;
   position: relative;
   font-size: $default-font-size;
+
+  //change for the button element
+  border:none;
+  cursor:pointer;
 }
 
 .btn{
+
+  &{
+    @extend %button_placeholder;
+  }
+
   &:link{
     @extend %button_placeholder;
   }
@@ -29,7 +38,8 @@
     }
 
   }
-  &:active{
+  &:active, &:focus{
+    outline:none;
     @include  btn_animation_on_hover_and_active(-.1,.5,1);
   }
 
