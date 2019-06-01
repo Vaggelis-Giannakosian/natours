@@ -194,7 +194,8 @@ order: base - typography > general layout + grid > page_layouts > components
   z-index: 1500;
   width: 0;
   opacity: 0;
-  transition: all 0.8s cubic-bezier(0.67, -0.5, 0.06, 1.4); }
+  transition: all 0.8s cubic-bezier(0.67, -0.5, 0.06, 1.4);
+  visibility: hidden; }
 
 .navigation__list {
   position: absolute;
@@ -202,6 +203,7 @@ order: base - typography > general layout + grid > page_layouts > components
   left: 50%;
   transform: translate(-50%, -50%);
   list-style: none;
+  text-align: center;
   text-align: center;
   width: 100%; }
 
@@ -230,7 +232,8 @@ order: base - typography > general layout + grid > page_layouts > components
 
 .navigation__checkbox:checked ~ .navigation__nav {
   opacity: 1;
-  width: 100%; }
+  width: 100%;
+  visibility: visible; }
 
 .navigation__checkbox:checked ~ .navigation__background {
   transform: scale(80); }
@@ -638,6 +641,9 @@ order: base - typography > general layout + grid > page_layouts > components
   width: 90%;
   display: block;
   transition: all .3s; }
+  @media (max-width: 56.25em) {
+    .form__input {
+      width: 100%; } }
   .form__input::-webkit-input-placeholder {
     color: #999; }
   .form__input:focus {
@@ -663,6 +669,10 @@ order: base - typography > general layout + grid > page_layouts > components
 .form__radio-group {
   width: 49%;
   display: inline-block; }
+  @media (max-width: 56.25em) {
+    .form__radio-group {
+      width: 100%;
+      margin-bottom: 2rem; } }
 
 .form__radio-input {
   display: none; }
@@ -695,6 +705,9 @@ order: base - typography > general layout + grid > page_layouts > components
     background-color: #55c57a;
     opacity: 0;
     transition: opacity .2s; }
+    @media (max-width: 56.25em) {
+      .form__radio-button::after {
+        top: -25%; } }
 
 .form__radio-input:checked ~ .form__radio-label .form__radio-button::after {
   opacity: 1; }
@@ -724,17 +737,44 @@ order: base - typography > general layout + grid > page_layouts > components
     opacity: 0;
     transform: translate(-50%, -50%) scale(0.2);
     transition: all .5s .2s; }
+    @media (max-width: 56.25em) {
+      .popup__content {
+        display: block; } }
   .popup__left {
     display: table-cell;
     width: 33.3333%; }
+    @media (max-width: 56.25em) {
+      .popup__left {
+        display: table;
+        table-layout: auto;
+        width: 100%; } }
   .popup__right {
     display: table-cell;
     width: 66.6666%;
     vertical-align: middle;
-    padding: 3rem 5rem; }
+    padding: 1rem 5rem; }
+    @media (max-width: 75em) {
+      .popup__right {
+        padding: 0 2rem; } }
+    @media (max-width: 56.25em) {
+      .popup__right {
+        display: block;
+        width: 100%; } }
   .popup__img {
     display: block;
     width: 100%; }
+    @media (max-width: 56.25em) {
+      .popup__img {
+        display: inline-table;
+        width: 50%;
+        max-height: 18rem;
+        object-fit: cover; } }
+    @media (max-width: 37.5em) {
+      .popup__img {
+        width: 100%; } }
+    @media (max-width: 37.5em) {
+      .popup__img:nth-child(2) {
+        display: none; } }
   .popup__text {
     font-size: 1.4rem;
     margin-bottom: 4rem;
@@ -748,6 +788,11 @@ order: base - typography > general layout + grid > page_layouts > components
     -ms-hyphens: auto;
     -webkit-hyphens: auto;
     hyphens: auto; }
+    @media (max-width: 75em) {
+      .popup__text {
+        margin-bottom: 2rem;
+        column-count: 1;
+        font-size: 1.3rem; } }
   .popup:target {
     opacity: 1;
     visibility: visible; }
@@ -765,6 +810,12 @@ order: base - typography > general layout + grid > page_layouts > components
     line-height: 1; }
   .popup__close:hover {
     color: #55c57a; }
+  @media (max-width: 75em) {
+    .popup__text + .btn.btn--green:link, .popup__text + .btn.btn--green:link:visited {
+      padding: 0.8rem 4rem; } }
+  @media (max-width: 56.25em) {
+    .popup__text + .btn.btn--green:link, .popup__text + .btn.btn--green:link:visited {
+      margin-bottom: 20px; } }
 
 /*
 0-600 phone
@@ -827,12 +878,24 @@ order: base - typography > general layout + grid > page_layouts > components
   border-radius: 3px;
   background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 49.9%, transparent 50%, transparent 100%), url(../img/nat-10.jpg);
   background-size: 100%;
-  height: 50rem;
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.25); }
+  @media (max-width: 75em) {
+    .book {
+      background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 64.9%, transparent 65%), url(../img/nat-10.jpg);
+      background-size: cover; } }
+  @media (max-width: 56.25em) {
+    .book {
+      background-image: linear-gradient(to right, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 100%), url(../img/nat-10.jpg); } }
   .book__form {
     width: 50%;
-    padding: 6rem;
-    margin-left: 0; }
+    padding: 6rem; }
+    @media (max-width: 75em) {
+      .book__form {
+        width: 65%; } }
+    @media (max-width: 56.25em) {
+      .book__form {
+        width: 100%;
+        padding: 3rem; } }
 
 /*
 0-600 phone

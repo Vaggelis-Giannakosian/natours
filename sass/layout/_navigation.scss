@@ -60,12 +60,14 @@
     width:0;
     opacity: 0;
     transition: all .8s cubic-bezier(.67,-.5,.06,1.4);
+    visibility: hidden;
   }
 
 
   &__list{
     @include centerElement;
     list-style: none;
+    text-align: center;
     text-align: center;
     width:100%;
   }
@@ -113,6 +115,7 @@
   &__checkbox:checked ~ &__nav {
     opacity: 1;
     width: 100%;
+    visibility: visible;
   }
 
 
